@@ -39,7 +39,7 @@ jobs:
         env:
           docker_output: ${{ steps.docker-run.outputs.docker_output }}
         run: |
-          if [[ "$docker_output" == "*Hello World!*" ]]
+          if [[ "$docker_output" == *"Hello World!"* ]]
           then
             echo "Docker Build Completed"
           else
