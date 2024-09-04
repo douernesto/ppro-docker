@@ -30,7 +30,7 @@ jobs:
       - name: Run Docker Image
         id: docker-run
         run: |
-          docker run sample-app
+          docker run "sample-app:v1"
 
       - name: Test Docker Image
         env:
