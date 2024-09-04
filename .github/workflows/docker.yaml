@@ -30,4 +30,3 @@ jobs:
       - name: Run Docker Image
         run: |
           docker run -it sample-app
-
