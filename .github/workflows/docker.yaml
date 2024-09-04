@@ -28,5 +28,12 @@ jobs:
           docker build -t "sample-app:v1" .
 
       - name: Run Docker Image
+        id: docker-run
         run: |
-          docker run -it sample-app
+          docker run sample-app
+
+      - name: Test Docker Image
+        env:
+          docker_output: steps.docker-run.outputs
+        run: |
+          echo $docker_output
