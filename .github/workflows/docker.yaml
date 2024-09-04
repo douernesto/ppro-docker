@@ -30,7 +30,7 @@ jobs:
       - name: Run Docker Image
         id: docker-run
         run: |
-          docker run "sample-app:v1"
+          docker run "sample-app:v1" >> "$GITHUB_OUTPUT"
 
       - name: Test Docker Image
         env:
