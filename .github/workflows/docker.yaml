@@ -34,6 +34,6 @@ jobs:
 
       - name: Test Docker Image
         env:
-          docker_output: ${{steps.docker-run.outputs}}
+          docker_output: ${{ steps.docker-run.outputs.stdout }}
         run: |
           echo $docker_output
