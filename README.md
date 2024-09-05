@@ -9,3 +9,7 @@ For this demo I made it as simple as possible.
 1. Build Docker image using `Dockerfile` only locally
 1. Run the Docker Image and save the **stdout**
 1. Compare the **stdout** from the previous step, if the output is correct the image was correctly build. Otherwise exit code 1
+
+## To execute
+
+Trigger a Manual Workflow Dispatch for "Build and Test Docker Image"
