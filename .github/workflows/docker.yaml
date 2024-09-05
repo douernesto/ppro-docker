@@ -28,6 +28,21 @@ jobs:
           docker build -t "sample-app:v1" .
 
       - name: Run Docker Image
+        id: docker-run
         run: |
-          docker run -it sample-app
+          docker_output=$(docker run "sample-app:v1")
+          echo $docker_output
+          echo "docker_output=$docker_output" >> $GITHUB_OUTPUT
 
+      - name: Test Docker Image
+        shell: bash
+        env:
+          docker_output: ${{ steps.docker-run.outputs.docker_output }}
+        run: |
+          if [[ "$docker_output" == *"Hello World!"* ]]
+          then
+            echo "Docker Build Completed"
+          else
+            echo "Docker Build Failed"
+            exit 1
+          fi
